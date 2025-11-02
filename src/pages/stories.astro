@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Soul-Stirring Stories: Chicken's Cultural Odyssey";
+const pageDescription = "Dive into captivating tales where chicken meets culture in Fried Faith's vibrant stories. From ancient rituals to modern feasts, explore the bold heritage of poultry in global cuisine and traditions.";
+
+const stories = [
+  {
+    id: 1,
+    title: "The Phoenix of the Pyramids",
+    excerpt: "Unravel the ancient ritual of chicken sacrifice in Egypt's grandest monuments.",
+    region: "Egypt"
+  },
+  {
+    id: 2,
+    title: "Braised Dreams in Kyoto",
+    excerpt: "How chicken perfected its art in Japan's temple kitchens and street stalls.",
+    region: "Japan"
+  },
+  {
+    id: 3,
+    title: "Spiced Memories in Marrakech",
+    excerpt: "The aromatic journey of chicken through Moroccan spice markets and family recipes.",
+    region: "Morocco"
+  },
+  {
+    id: 4,
+    title: "Carnival Chicken of Rio",
+    excerpt: "The explosive spirit of chicken dishes at Brazil's most vibrant celebrations.",
+    region: "Brazil"
+  },
+  {
+    id: 5,
+    title: "Mama's Legacy in Memphis",
+    excerpt: "A soulful tale of chicken cooked over pit fires in the heart of blues country.",
+    region: "USA"
+  },
+  {
+    id: 6,
+    title: "Festival Fire in Bali",
+    excerpt: "Chicken as the centerpiece of Indonesia's most sacred culinary ceremonies.",
+    region: "Indonesia"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-feather-alt",
+    title: "Cultural Roots",
+    description: "Discover deep historical significance in traditional cooking methods"
+  },
+  {
+    icon: "fas fa-fire",
+    title: "Flavor Evolution",
+    description: "Trace how regional spices shaped chicken's transformative taste profiles"
+  },
+  {
+    icon: "fas fa-users",
+    title: "Community Stories",
+    description: "Connect with the people behind each cherished recipe and tradition"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  {/* Hero Section */}
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#8b0000] via-[#8b0000]/90 to-[#ffdb58]/90"></div>
+    <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Soul-Stirring Stories:
+          <span class="block">Chicken's Cultural Odyssey</span>
+        </h1>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl">
+          Dive into captivating tales where chicken meets culture in Fried Faith's vibrant stories. 
+          From ancient rituals to modern feasts, explore the bold heritage of poultry in global cuisine and traditions.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-white text-[#8b0000] hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Read Stories
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-6 rounded-full transition-all duration-300">
+            Explore Recipes
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Feature Highlights */}
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#8b0000] mb-4">Why Chicken Captivates</h2>
+        <div class="w-24 h-1 bg-[#ffdb58] mx-auto"></div>
+        <p class="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
+          Chicken isn't just food—it's a vessel for history, emotion, and innovation. 
+          From the sacred roasts of ancient festivals to the sizzling street foods of today, 
+          these stories pulse with the rhythm of human experience.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 rounded-full bg-[#ffdb58] flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-[#8b0000]`}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-[#8b0000]/10 rounded-2xl p-8 md:p-12 border border-[#8b0000]/20">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+            <div class="relative">
+              <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-[#ffdb58] flex items-center justify-center">
+                <i class="fas fa-quote-left text-6xl text-[#8b0000]"></i>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-2/3 md:pl-12">
+            <blockquote class="text-xl md:text-2xl italic text-gray-800">
+              "In every bite, a story unfolds."
+            </blockquote>
+            <p class="mt-4 text-lg text-[#8b0000] font-semibold">
+              Our tagline promises: Exploring Chicken's Soul-Stirring Stories in Culture and Cuisine
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Story Gallery */}
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#8b0000] mb-4">Featured Tales from Around the Globe</h2>
+        <div class="w-24 h-1 bg-[#ffdb58] mx-auto"></div>
+        <p class="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
+          Journey through time and geography as we uncover how chicken has been central to cultures worldwide.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {stories.map((story) => (
+          <article key={story.id} class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="h-64 bg-gradient-to-br from-[#8b0000] to-[#5a0000] flex items-center justify-center">
+              <div class="text-center p-6">
+                <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full p-4 mb-4">
+                  <i class="fas fa-chicken text-4xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">{story.title}</h3>
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <div class="flex justify-between items-start">
+                <span class="inline-block bg-[#ffdb58] text-[#8b0000] text-xs font-bold px-3 py-1 rounded-full">
+                  {story.region}
+                </span>
+                <i class="fas fa-arrow-right text-[#8b0000] group-hover:animate-pulse"></i>
+              </div>
+              <p class="mt-4 text-gray-700">{story.excerpt}</p>
+              <button class="mt-6 text-[#8b0000] font-semibold flex items-center group-hover:text-[#ffdb58] transition-colors">
+                Read full story 
+                <i class="fas fa-chevron-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Call to Action */}
+  <section class="py-20 bg-gradient-to-r from-[#8b0000] to-[#5a0000]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Embark on Your Journey?</h2>
+      <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">
+        Join us as we explore the rich tapestry of cultural stories woven through chicken's timeless legacy.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-[#8b0000] hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Explore All Stories
+        </button>
+        <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300">
+          Subscribe to Our Newsletter
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .story-card:hover {
+    animation: pulse 0.5s ease;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+</style>

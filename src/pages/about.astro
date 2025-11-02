@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About The Poultry Post";
+const pageDescription = "Explore the origins and mission of The Poultry Post, a premier resource for ethical poultry farming practices and expert insights into chicken nutrition, presented with an elegant vintage-modern aesthetic.";
+const founders = [
+  {
+    name: "Dr. Eleanor Featherworth",
+    role: "Chief Veterinary Officer",
+    bio: "Veterinarian with 15 years of experience in poultry health and welfare"
+  },
+  {
+    name: "Marcus Barnsworth",
+    role: "Nutrition Lead",
+    bio: "Expert in avian nutrition and sustainable feed solutions"
+  },
+  {
+    name: "Lily Quillwright",
+    role: "Ethics Director",
+    bio: "Advocate for animal welfare standards in modern farming"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#4b0026] via-[#556b2f] to-[#4b0026] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzIiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">
+          About <span class="text-yellow-200">The Poultry Post</span>
+        </h1>
+        <div class="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-yellow-100 font-serif italic max-w-3xl mx-auto leading-relaxed">
+          Insights into Ethical Poultry Farming and Chicken Nutrition
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-[#f5f0e6] to-[#e8dfd2]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center mb-12">
+          <div class="w-16 h-1 bg-[#4b0026] mr-4"></div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#4b0026]">Our Story</h2>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl max-w-none text-[#3a2a1d] leading-relaxed">
+          <p class="mb-6 text-lg">
+            Founded by a team of passionate poultry enthusiasts, veterinarians, and nutritionists, The Poultry Post emerged from a shared vision: to empower farmers, homesteaders, and backyard enthusiasts with reliable, compassionate knowledge. In an era where industrial farming dominates, we champion <span class="font-bold text-[#556b2f]">ethical practices</span> that prioritize animal welfare alongside sustainable production.
+          </p>
+          <p class="mb-6 text-lg">
+            Our elegant vintage design, infused with a modern twist, reflects the timeless respect for nature paired with innovative approaches to sustainable agriculture. Every article, recipe, and recommendation is grounded in scientific research and real-world farming experience.
+          </p>
+          <p class="text-lg">
+            From small backyard coops to large commercial operations, we believe that ethical poultry farming is not just possible—it's essential for our future. Through education, research, and community building, we're helping create a more sustainable and compassionate food system.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founders Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <div class="inline-block w-16 h-1 bg-[#556b2f] mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#4b0026]">Our Leadership Team</h2>
+        <p class="mt-4 text-[#556b2f] max-w-2xl mx-auto">Meet the experts behind The Poultry Post</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {founders.map((founder, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#f5f0e6] to-[#e8dfd2] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-[#d4c7b2]">
+            <div class="w-20 h-20 rounded-full bg-[#556b2f] flex items-center justify-center mb-6">
+              <i class="fas fa-user text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-[#4b0026] mb-2">{founder.name}</h3>
+            <p class="text-[#556b2f] font-medium mb-4">{founder.role}</p>
+            <p class="text-[#3a2a1d]">{founder.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-[#4b0026] to-[#556b2f] text-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+          <div class="inline-block w-16 h-1 bg-yellow-400 mb-4"></div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Our Mission & Values</h2>
+          <ul class="space-y-4 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+              <span>Promoting ethical treatment of poultry through evidence-based practices</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+              <span>Advancing sustainable feeding solutions for all scales of farming</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+              <span>Fostering community among poultry enthusiasts worldwide</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+              <span>Providing accessible resources for both novice and experienced farmers</span>
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/2">
+          <div class="relative">
+            <div class="w-full h-80 bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-2xl shadow-xl flex items-center justify-center">
+              <div class="text-center p-6">
+                <i class="fas fa-egg text-[#4b0026] text-6xl mb-4"></i>
+                <p class="text-[#4b0026] font-serif text-xl italic">"Compassion in agriculture is not a luxury—it's necessity"</p>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[#556b2f] rounded-full flex items-center justify-center">
+              <i class="fas fa-feather-alt text-white text-3xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-16 md:py-24 bg-[#e8dfd2]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block w-16 h-1 bg-[#4b0026] mb-6"></div>
+        <blockquote class="text-2xl md:text-3xl font-serif italic text-[#3a2a1d] mb-8">
+          "We believe that understanding and respecting the natural behaviors and needs of our feathered friends leads to healthier flocks and more sustainable farming practices."
+        </blockquote>
+        <cite class="text-lg text-[#556b2f] font-medium">— The Poultry Post Editorial Team</cite>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  body {
+    font-family: 'Georgia', serif;
+  }
+  
+  .hero-pattern {
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                      radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+</style>

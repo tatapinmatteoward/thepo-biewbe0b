@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Welcome to The Poultry Post";
+const pageDescription = "Discover expert insights on ethical poultry farming and optimal chicken nutrition. Explore sustainable practices and health tips for healthier flocks in an elegant blend of tradition and innovation.";
+
+const features = [
+  {
+    title: "Welfare First",
+    description: "Prioritize spacious coops, natural foraging, and stress-free environments to ensure your birds thrive.",
+    icon: "fas fa-heart"
+  },
+  {
+    title: "Eco-Friendly Choices",
+    description: "Reduce your carbon footprint with organic feeds and waste-recycling solutions.",
+    icon: "fas fa-leaf"
+  },
+  {
+    title: "Nutritional Excellence",
+    description: "Learn about optimal diets for health and egg production with natural ingredients.",
+    icon: "fas fa-seedling"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Margaret Thompson",
+    role: "Backyard Farmer",
+    content: "The guides helped me transition to ethical farming methods. My flock is thriving!"
+  },
+  {
+    name: "Robert Chen",
+    role: "Small Farm Owner",
+    content: "Practical advice that actually works. Sustainable farming made simple."
+  },
+  {
+    name: "Sarah Johnson",
+    role: "Poultry Enthusiast",
+    content: "Finally, a resource that balances tradition with modern science. Highly recommended!"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-amber-50 to-amber-100 py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-32 h-32 border-4 border-amber-800 rounded-full"></div>
+      <div class="absolute bottom-20 right-20 w-24 h-24 border-2 border-amber-700 rounded-full"></div>
+      <div class="absolute top-1/3 right-1/4 w-16 h-16 border-2 border-amber-600 rounded-full"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-amber-900 mb-6 leading-tight">
+          Welcome to <span class="text-amber-700">The Poultry Post</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-amber-800 mb-10 font-serif italic">
+          Insights into Ethical Poultry Farming and Chicken Nutrition
+        </p>
+        
+        <div class="bg-white/70 backdrop-blur-sm border-2 border-amber-200 rounded-xl p-6 shadow-lg max-w-2xl mx-auto">
+          <p class="text-lg text-amber-900 mb-4">
+            Step into a world where timeless traditions meet cutting-edge knowledge. 
+            At <span class="font-semibold">The Poultry Post</span>, we celebrate the art of poultry care with a modern sensibility.
+          </p>
+          <p class="text-lg text-amber-900">
+            Whether you're a seasoned farmer or just starting your backyard flock, 
+            our curated content empowers you to raise happy, healthy chickens ethically.
+          </p>
+        </div>
+        
+        <div class="mt-12 flex justify-center space-x-4">
+          <button class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Articles
+          </button>
+          <button class="border-2 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg">
+            Join Our Community
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits Section -->
+  <section class="py-20 bg-gradient-to-b from-amber-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-4">
+          Why Choose Ethical Farming?
+        </h2>
+        <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            class="bg-white rounded-xl shadow-lg p-8 border-2 border-amber-100 hover:border-amber-300 transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="text-5xl text-amber-700 mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-amber-900 mb-4">{feature.title}</h3>
+            <p class="text-amber-800 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-amber-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-4">
+          What Our Readers Say
+        </h2>
+        <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index} 
+            class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-user text-amber-700 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-amber-900">{testimonial.name}</h4>
+                <p class="text-sm text-amber-600">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-amber-800 italic">"{testimonial.content}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-amber-800 to-amber-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">
+        Ready to Transform Your Poultry Journey?
+      </h2>
+      <p class="text-xl max-w-3xl mx-auto mb-10 text-amber-100">
+        Join thousands of farmers who trust The Poultry Post for expert guidance on sustainable, ethical farming practices.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-amber-800 hover:bg-amber-100 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg transform hover:scale-105">
+          Subscribe to Newsletter
+        </button>
+        <button class="border-2 border-white text-white hover:bg-white hover:text-amber-800 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg">
+          Browse Latest Articles
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

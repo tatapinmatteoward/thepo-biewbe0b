@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Subscribe to The Poultry Post";
+const pageDescription = "Join our community for exclusive insights into ethical poultry farming and chicken nutrition. Stay updated with the latest articles, tips, and expert advice delivered straight to your inbox.";
+
+const benefits = [
+  {
+    title: "Expert Articles",
+    description: "In-depth explorations of ethical farming techniques and balanced chicken nutrition from seasoned professionals.",
+    icon: "fas fa-feather-alt"
+  },
+  {
+    title: "Seasonal Tips",
+    description: "Practical advice on flock health, feed optimization, and sustainable coop management throughout the year.",
+    icon: "fas fa-calendar-check"
+  },
+  {
+    title: "Exclusive Resources",
+    description: "Members-only access to downloadable guides, feeding charts, and breeding strategies.",
+    icon: "fas fa-file-download"
+  },
+  {
+    title: "Community Access",
+    description: "Join our private Facebook group for direct interaction with fellow poultry enthusiasts.",
+    icon: "fas fa-users"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "This newsletter has transformed how I manage my flock. The ethical guidelines are spot-on!",
+    author: "Margaret H., Backyard Farmer"
+  },
+  {
+    quote: "I've learned so much about natural feeding practices that have improved my chickens' health dramatically.",
+    author: "Robert T., Small Farm Owner"
+  },
+  {
+    quote: "The seasonal guidance is invaluable. My flock thrives because of these insights.",
+    author: "Jennifer L., Homestead Enthusiast"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#4b0026] to-[#556b2f] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImdyaWRwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPgogICAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJub25lIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMCAxMCBMMCAwIEwgMTAgMCBaIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZHBhdHRlcm4pIi8+Cjwvc3ZnPg==')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+          Subscribe to <span class="text-yellow-300">The Poultry Post</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-yellow-100 font-serif italic mb-10">
+          Insights into Ethical Poultry Farming and Chicken Nutrition
+        </p>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-2xl mx-auto">
+          <p class="text-white text-lg">
+            Join our community for exclusive insights into ethical poultry farming and chicken nutrition. 
+            Stay updated with the latest articles, tips, and expert advice delivered straight to your inbox.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits Section -->
+  <section class="py-20 bg-gradient-to-b from-[#fffaf5] to-[#f8f4ee]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#4b0026] mb-4">Why Subscribe?</h2>
+        <div class="w-24 h-1 bg-[#556b2f] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((benefit, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-lg p-6 transform transition duration-500 hover:-translate-y-2 border border-[#e8dcd1]">
+            <div class="bg-[#556b2f] w-16 h-16 rounded-full flex items-center justify-center text-white mb-6">
+              <i class={`${benefit.icon} text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[#4b0026] mb-3">{benefit.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#556b2f] to-[#4b0026]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Join Our Community Today</h2>
+        <p class="text-xl text-yellow-100 mb-10 max-w-2xl mx-auto">
+          Become part of a thriving network of poultry enthusiasts committed to ethical farming practices and healthy chickens.
+        </p>
+        
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name</label>
+                <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#556b2f] focus:border-transparent">
+              </div>
+              <div>
+                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name</label>
+                <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#556b2f] focus:border-transparent">
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+              <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#556b2f] focus:border-transparent">
+            </div>
+            <div>
+              <label for="frequency" class="block text-gray-700 font-medium mb-2">How Often?</label>
+              <select id="frequency" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#556b2f] focus:border-transparent">
+                <option>Weekly Digest</option>
+                <option>Bi-Weekly Newsletter</option>
+                <option>Monthly Overview</option>
+              </select>
+            </div>
+            <button type="submit" class="w-full bg-[#4b0026] hover:bg-[#556b2f] text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+              Subscribe Now
+            </button>
+          </form>
+          
+          <p class="mt-6 text-gray-600 text-sm">
+            <i class="fas fa-lock text-green-500 mr-2"></i> Your information is secure. We never share your details.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#4b0026] mb-4">What Our Members Say</h2>
+        <div class="w-24 h-1 bg-[#556b2f] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-[#fffaf5] rounded-xl p-8 border border-[#e8dcd1] shadow-md">
+            <div class="text-yellow-400 text-2xl mb-4">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="text-gray-700 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
+            <p class="text-[#4b0026] font-medium">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-[#4b0026] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-2xl font-serif font-bold mb-4">Thank You for Joining Us</h3>
+        <p class="text-yellow-100 mb-8 max-w-2xl mx-auto">
+          Together we're building a more ethical future for poultry farming. Expect exceptional content designed to elevate your poultry keeping journey.
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="text-yellow-300 hover:text-white transition duration-300">
+            <i class="fab fa-facebook-f text-2xl"></i>
+          </a>
+          <a href="#" class="text-yellow-300 hover:text-white transition duration-300">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a href="#" class="text-yellow-300 hover:text-white transition duration-300">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" class="text-yellow-300 hover:text-white transition duration-300">
+            <i class="fab fa-pinterest text-2xl"></i>
+          </a>
+        </div>
+        <div class="mt-8 pt-8 border-t border-[#556b2f] text-yellow-200 text-sm">
+          <p>&copy; {new Date().getFullYear()} The Poultry Post. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  body {
+    font-family: 'Georgia', serif;
+  }
+  
+  .font-serif {
+    font-family: 'Georgia', serif;
+  }
+  
+  .transform.hover\\:-translate-y-2:hover {
+    transform: translateY(-0.5rem);
+  }
+  
+  .transition.duration-500 {
+    transition: all 0.5s ease;
+  }
+  
+  .hover.scale-105:hover {
+    transform: scale(1.05);
+  }
+</style>
